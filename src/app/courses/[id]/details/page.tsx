@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'next/navigation'; // ✅ для App Router
+import Link from 'next/link';
 
 type Course = {
   id: number;
@@ -63,6 +64,9 @@ export default function CourseDetail() {
             <li><strong>Ціна:</strong> ${Number(course.price).toFixed(2)}</li>
             <li><strong>Рейтинг:</strong> {Number(course.rating).toFixed(2)}</li>
           </ul>
+          <Link href="/lessons/create" className="text-blue-600 underline">
+          + Добавить урок
+        </Link>
         </div>
       </main>
 
